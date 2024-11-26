@@ -1,0 +1,51 @@
+<div class="container">
+  <h1> {{ welcome }} </h1>
+
+  <div *ngFor=" let listas of lista">
+    <p>{{ listas }}</p>
+    <!--.repeat(2) hace que listas se imprima la cantidad de veces-->
+
+    <p>Mi edad es {{ age }}</p>
+
+  </div>
+
+
+  <br>
+    <hr />
+    <h1>Esta es la nueva caracteristicas</h1>
+
+    <h1> Me llamo {{ personas.name }} tengo {{ personas.age}}</h1>
+
+    <input type="text" [value]="personas.name">
+    <input type="number" [value]="personas.age">
+
+
+    <button [disabled]="personas.disable">Click aqui</button>
+    <br>
+    <br>
+    <img src="{{personas.img}}" alt="" width="105px">
+    <br>
+    <br>
+    <button (click)="ClickHandler()">Click aqui</button>
+    <br>
+    <br>
+    <p>(change) leelos cambios del teclado</p>
+    <input type="number" [value]="personas.age" (change)="clickteclado($event)">
+    <br>
+    <br>
+    <p>(change) Otra manera de que solo muestre al darle click</p>
+    <input type="text" [value]="personas.name" (change)="clicktecladopulso($event)">
+    <br>
+    <br>
+    <p>(keydown) leelos cambios del teclado</p>
+    <input type="text" [value]="personas.name" (keydown)="clicktecladopulso($event)">
+    <br>
+    <br>
+    <p>(keydown) fundiona al darle click al enter</p>
+    <input type="text" [value]="personas.name" (keydown.enter)="ClickHandler()">
+    <br>
+    <br>
+    <h1>SIGNAL</h1>
+    <h2> Este es mi Signal:  {{ mysignal() }}</h2>
+
+</div>
